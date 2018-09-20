@@ -36,7 +36,7 @@ ext_modules = [
 setup(
     name='cython_bbox',
     ext_modules=cythonize(ext_modules),
-    version = '0.1.0',
+    version = '0.1.3',
     description = 'Standalone cython_bbox',
     long_description=long_description,
     long_description_content_type="text/markdown",
