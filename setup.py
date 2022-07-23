@@ -10,6 +10,7 @@ from __future__ import print_function
 from setuptools import Extension
 from setuptools import setup
 from distutils.command.build import build as _build
+import os
 
 # ref from https://stackoverflow.com/questions/54117786/add-numpy-get-include-argument-to-setuptools-without-preinstalled-numpy
 class build(_build):
@@ -28,11 +29,16 @@ class build(_build):
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+if os.name == 'nt':
+    compile_args = {'gcc': ['/Qstd=c99']}
+else:
+    compile_args = ['-Wno-cpp']
+
 ext_modules = [
     Extension(
         name='cython_bbox',
         sources=['src/cython_bbox.pyx'],
-        extra_compile_args = {'gcc': ['/Qstd=c99']},
+        extra_compile_args = compile_args,
     )
 ]
 
