@@ -10,7 +10,7 @@ import numpy as np
 cimport numpy as np
 
 DTYPE = float
-ctypedef float DTYPE_t
+ctypedef double DTYPE_t
 
 def bbox_overlaps(
         np.ndarray[DTYPE_t, ndim=2] boxes,
