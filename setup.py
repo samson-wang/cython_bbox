@@ -45,7 +45,7 @@ ext_modules = [
 setup(
     name='cython_bbox',
     setup_requires=["setuptools>=18.0","Cython","numpy"],
-    install_requires=["Cython","numpy"],
+    install_requires=["cython","numpy"],
     ext_modules=ext_modules,
     cmdclass={'build': build},
     version = '0.1.3',
