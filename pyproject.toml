@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "cython-bbox"
+version = "1.0.0"
+description = ""
+authors = []
+packages = [{ include = "cython_bbox" }]
+include = [{ path = "cython_bbox/**/*.so", format = "wheel" }]
+
+
+[tool.poetry.dependencies]
+python = ">=3.7.4, <3.11"
+numpy = "1.21.6"
+
+[tool.poetry.build]
+script = "build.py"
+generate-setup-file = false
+
+[build-system]
+requires = ["poetry-core", "Cython~=0.29.32", "numpy==1.21.6", "setuptools"]
+build-backend = "poetry.core.masonry.api"
