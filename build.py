@@ -1,12 +1,16 @@
 import os
+import platform
 import shutil
 from distutils.command.build_ext import build_ext
 from distutils.core import Distribution, Extension
 
 from Cython.Build import cythonize
 
-
-compile_args = ["-march=native", "-O3", "-msse", "-msse2", "-mfma", "-mfpmath=sse"]
+if platform.processor() == "aarch64":
+    compile_args = ["-march=native", "-O3"]
+else:
+    compile_args = ["-march=native", "-O3", "-msse", "-msse2", "-mfma", "-mfpmath=sse"]
+    
 link_args = []
 include_dirs = []
 libraries = ["m"]
