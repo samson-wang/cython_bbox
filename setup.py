@@ -48,7 +48,7 @@ setup(
     install_requires=["Cython","numpy"],
     ext_modules=ext_modules,
     cmdclass={'build': build},
-    version = '0.1.3',
+    version = '0.1.4',
     description = 'Standalone cython_bbox',
     long_description=long_description,
     long_description_content_type="text/markdown",
