@@ -48,12 +48,12 @@ setup(
     install_requires=["Cython","numpy"],
     ext_modules=ext_modules,
     cmdclass={'build': build},
-    version = '0.1.4',
+    version = '0.1.5',
     description = 'Standalone cython_bbox',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author = 'Samson Wang',
-    author_email = 'samson.c.wang@gmail.com',
+    author = 'Samson Wang and Adriano Santos',
+    author_email = 'samson.c.wang@gmail.com and adriano.nego@gmail.com',
     url = 'https://github.com/samson-wang/cython_bbox.git', 
     keywords = ['cython_bbox']
 )
