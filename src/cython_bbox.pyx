@@ -9,7 +9,7 @@ cimport cython
 import numpy as np
 cimport numpy as np
 
-DTYPE = float
+DTYPE = np.float64
 ctypedef np.float64_t DTYPE_t
 
 __version__ = "0.1.5"
@@ -48,7 +48,7 @@ def bbox_overlaps(
                     max(boxes[n, 1], query_boxes[k, 1]) + 1
                 )
                 if ih > 0:
-                    ua = float(
+                    ua = DTYPE(
                         (boxes[n, 2] - boxes[n, 0] + 1) *
                         (boxes[n, 3] - boxes[n, 1] + 1) +
                         box_area - iw * ih
